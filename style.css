@@ -599,7 +599,7 @@ section:nth-child(even) {
 
 /* Content Page Styles */
 .content-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/portfolio background.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('portfolio background.jpg');
   background-size: cover;
   background-position: center;
   padding: 180px 0 100px;
