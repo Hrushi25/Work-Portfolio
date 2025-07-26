@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +22,9 @@
                 <h1>Hrishikesh Gawde</h1>
             </div>
             <nav>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -51,7 +53,7 @@
         <div class="container">
             <h2 class="section-title">Video Showcase</h2>
             <div class="video-container">
-                <video id="showcase-video" controls autoplay playsinline>
+                <video id="showcase-video" controls playsinline>
                     <source src="video/background.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -65,12 +67,12 @@
             <h2 class="section-title">My Work Environment</h2>
             <div class="work-images">
                 <div class="work-image-card">
-                    <img src="AI generated.jpg" alt="Coding Environment">
+                    <img src="images/AI generated.jpg" alt="Coding Environment">
                     <h3>Development Environment</h3>
                     <p>Where ideas transform into solutions</p>
                 </div>
                 <div class="work-image-card">
-                    <img src="DALL-E generated.jpg" alt="Data Visualization">
+                    <img src="images/DALL-E generated.jpg" alt="Data Visualization">
                     <h3>Data Analysis</h3>
                     <p>Finding patterns in complex datasets</p>
                 </div>
@@ -101,12 +103,34 @@
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
-            <p>Email: hrishikeshgawde2507@gmail.com</p>
-            <p>Phone: 206-581-8623</p>
-            <div class="contact-social-links">
-                <a href="https://github.com/hrishikeshgawde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:hrishikeshgawde2507@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
-                <a href="https://www.linkedin.com/in/hrishikesh-gawde/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: hrishikeshgawde2507@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: 206-581-8623</p>
+                    <div class="contact-social-links">
+                        <a href="https://github.com/hrishikeshgawde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="mailto:hrishikeshgawde2507@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
+                        <a href="https://www.linkedin.com/in/hrishikesh-gawde/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                    <div id="form-status" class="hidden"></div>
+                </div>
             </div>
         </div>
     </section>
