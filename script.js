@@ -1,4 +1,3 @@
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -46,15 +45,129 @@ if (contactForm) {
   });
 }
 
-// Resume download handler
-const resumeDownload = document.getElementById('resume-download');
-if (resumeDownload) {
-  resumeDownload.addEventListener('click', function(e) {
-    // Link is already set in the HTML - this will now work automatically
-    // But we can add tracking or additional functionality here if needed
-    console.log('Resume download initiated');
+// Resume download handler with improved functionality
+function setupResumeDownload() {
+  // Get all resume download buttons on the site (in case you have more than one)
+  const resumeDownloadLinks = document.querySelectorAll('a[href$="Resume.pdf"][download]');
+  
+  if (resumeDownloadLinks.length > 0) {
+    resumeDownloadLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Check if file exists before download attempt
+        const xhr = new XMLHttpRequest();
+        const url = this.getAttribute('href');
+        
+        xhr.open('HEAD', url, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log('Resume download initiated successfully');
+              // You could add analytics tracking here
+            } else {
+              console.error('Resume file not found!');
+              e.preventDefault(); // Prevent the default download
+              alert('Sorry, the resume file could not be found. Please try again later or contact me directly.');
+            }
+          }
+        };
+        xhr.send();
+      });
+    });
+    
+    console.log('Resume download functionality initialized');
+  }
+}
+
+// Project Modal Functionality
+function setupProjectModals() {
+  const modalOverlay = document.getElementById('modal-overlay');
+  const viewDetailsButtons = document.querySelectorAll('.view-details');
+  const closeModalButtons = document.querySelectorAll('.close-modal');
+  const projectModals = document.querySelectorAll('.project-modal');
+  
+  // Open modal when View Details is clicked
+  viewDetailsButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const projectId = this.getAttribute('data-project');
+      const modal = document.getElementById(projectId);
+      
+      // Show overlay and modal
+      modalOverlay.style.display = 'block';
+      modal.style.display = 'block'; 
+      
+      // Wait a tiny bit before showing modal (for animation)
+      setTimeout(() => {
+        modal.classList.add('active');
+      }, 50);
+      
+      // Prevent scrolling while modal is open
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close modal functions
+  function closeAllModals() {
+    projectModals.forEach(modal => {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.style.display = 'none';  // <-- ADD THIS inside setTimeout
+      }, 300);
+    });
+  
+    setTimeout(() => {
+      modalOverlay.style.display = 'none';
+    }, 300);
+  
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Close when X is clicked
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', closeAllModals);
+  });
+  
+  // Close when clicking outside the modal
+  modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) {
+      closeAllModals();
+    }
+  });
+  
+  // Close when ESC key is pressed
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeAllModals();
+    }
   });
 }
+
+function setupGallery() {
+  const images = document.querySelectorAll('.gallery-image');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+}
+
+// Call setupGallery() when DOM content loaded
+document.addEventListener('DOMContentLoaded', function() {
+  setupGallery();
+});
+
 
 // Project filter functionality (can be implemented if needed)
 // const filterButtons = document.querySelectorAll('.filter-btn');
@@ -97,45 +210,11 @@ window.addEventListener('scroll', function() {
 
 // Video handling
 document.addEventListener('DOMContentLoaded', function() {
-  // Background video handling
-  const heroVideo = document.getElementById('hero-video');
-  if (heroVideo) {
-    // Remove any background image that might be overriding the video
-    document.getElementById('hero').style.background = 'none';
-    
-    // Make sure video background is visible
-    const videoBackground = document.querySelector('.video-background');
-    if (videoBackground) {
-      videoBackground.style.display = 'block';
-    }
-    
-    // Force video to play
-    setTimeout(() => {
-      heroVideo.play().catch(function(error) {
-        console.log('Auto-play prevented by browser. User interaction needed:', error);
-      });
-    }, 100);
-    
-    // Add reload function in case the video doesn't load properly
-    heroVideo.addEventListener('error', function(e) {
-      console.error('Video error:', e);
-      
-      // Try to load the video again
-      const videoSource = heroVideo.querySelector('source');
-      videoSource.src = 'video/background.mp4';
-      heroVideo.load();
-      heroVideo.play();
-    });
-    
-    // Ensure video is always visible and playing
-    document.addEventListener('click', function() {
-      if (heroVideo.paused) {
-        heroVideo.play().catch(function(error) {
-          console.log('Failed to play video after user interaction:', error);
-        });
-      }
-    }, { once: true });
-  }
+  // Call resume download setup
+  setupResumeDownload();
+  
+  // Call project modals setup
+  setupProjectModals();
   
   // Showcase video handling
   const showcaseVideo = document.getElementById('showcase-video');
