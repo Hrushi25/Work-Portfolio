@@ -22,13 +22,16 @@
                 <h1>Hrishikesh Gawde</h1>
             </div>
             <nav>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -37,108 +40,498 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="video-background">
-            <video autoplay muted loop playsinline id="hero-video">
-                <source src="background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-        </div>
         <div class="container">
             <div class="hero-flex">
                 <div class="hero-content">
                     <h2>Hi, I'm Hrishikesh Gawde</h2>
-                    <h3>Software Engineer</h3>
-                    <p style="font-style: color: black;">Software Engineer with 4+ years of experience delivering high-impact, scalable web and back-end solutions. Skilled in Angular, .NET, SQL and cloud platforms, with a track record of driving performance improvements, reducing deployment times by 50%, and enhancing system security. </p>
+                    <h3>Software Development Engineer II</h3>
                     <div class="cta-buttons">
-                        <a href="content.html" class="btn primary">View My Work</a>
-                        <a href="#contact" class="btn secondary">Get In Touch</a>
+                        <a href="#contact" class="btn primary">Contact Me</a>
+                        <a href="Resume.docx" download class="btn secondary">Download Resume</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Hrishi_image.jpg" alt="Hrishikesh Gawde" class="portrait">
+                    <img src="images/Hrishi_image.jpg" alt="Hrishikesh Gawde" class="portrait">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Customer Transaction Data Pipeline</h3>
-                    <p>Developed an ETL pipeline to detect fraud in financial transactions, processing large-scale data efficiently.</p>
-                    <span>Python, SQL, AWS, Tableau</span>
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/AI generated.jpg" alt="Customer Transaction Data Pipeline" class="project-image">
+                
+                <h3>Credit Card Fraud Detection System</h3>
+                <p>Developed a machine learning pipeline and interactive dashboard to detect and visualize credit card fraud with high accuracy.</p>
+
+                
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>AWS</span>
+                    <span>Tableau</span>
                 </div>
-                <div class="project-card">
-                    <h3>Healthcare Analytics: Predictive Health Outcomes</h3>
-                    <p>Designed an ML model to predict diabetes risk with 0.89 F1-score and built Power BI dashboards.</p>
-                    <span>Python, Power BI, SQL</span>
+                
+                <button class="btn view-details" data-project="project1">View Details</button>
+            </div>
+            
+            <div class="project-card">
+                <img src="images/AI generated.jpg" alt="Customer Transaction Data Pipeline" class="project-image">
+                <h3>Healthcare Analytics: Predictive Health Outcomes</h3>
+                <p>Designed an ML model to predict diabetes risk with 0.89 F1-score and built Power BI dashboards.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Power BI</span>
+                    <span>SQL</span>
                 </div>
-                <div class="project-card">
-                    <h3>Object Detection for Self-Driving Cars</h3>
-                    <p>Developed a YOLO-based object detection system with 90% accuracy, enhancing real-time monitoring.</p>
-                    <span>YOLO, Deep Learning</span>
+                <button class="btn view-details" data-project="project2">View Details</button>
+            </div>
+            <div class="project-card">
+                <img src="images/AI generated.jpg" alt="Customer Transaction Data Pipeline" class="project-image">
+                <h3>Object Detection System for Self-Driving Cars</h3>
+<p>Developed a YOLO-based object detection system with 90% accuracy for real-time recognition of vehicles, pedestrians, and traffic signs.</p>
+
+                <div class="project-tech">
+                    <span>YOLO</span>
+                    <span>Deep Learning</span>
+                    <span>Computer Vision</span>
                 </div>
-                <div class="project-card">
-                    <h3>Deep Learning for Image Composition Detection</h3>
-                    <p>Developed a YOLO-based object detection system with 90% accuracy, enhancing real-time monitoring.</p>
-                    <span>YOLO, Deep Learning</span>
+                <button class="btn view-details" data-project="project3">View Details</button>
+            </div>
+            <div class="project-card">
+                <img src="images/AI generated.jpg" alt="Customer Transaction Data Pipeline" class="project-image">
+                <h3>Deep Learning for Image Composition Detection</h3>
+                <p>Developed a real-time AI-powered platform using facial detection and gamification to enhance stress relief and wellness practices.</p>
+                <div class="project-tech">
+                    <span>CNN</span>
+                    <span>TensorFlow</span>
+                    <span>Computer Vision</span>
                 </div>
-                <div class="project-card">
-                    <h3>Prediction mortilaity rate using ML</h3>
-                    <p>Developed a YOLO-based object detection system with 90% accuracy, enhancing real-time monitoring.</p>
-                    <span>YOLO, Deep Learning</span>
+                <button class="btn view-details" data-project="project4">View Details</button>
+            </div>
+            <div class="project-card">
+                <img src="images/AI generated.jpg" alt="Customer Transaction Data Pipeline" class="project-image">
+                <h3>Mortality Rate Prediction System</h3>
+                <p>Built a predictive model for hospital mortality rates using patient data, achieving 87% accuracy in forecasts.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                    <span>Healthcare Data</span>
                 </div>
+                <button class="btn view-details" data-project="project5">View Details</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    
+    <!-- Project Modals -->
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <div class="project-modal" id="project1">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Credit Card Fraud Detection System</h2>
+            
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>Developed a comprehensive Credit Card Fraud Detection System using machine learning to identify fraudulent transactions with high accuracy. The system leverages transaction patterns, temporal data, and geospatial information to detect potentially fraudulent activities and help financial institutions prevent losses.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Project Screenshots</h3>
+                <div class="modal-gallery">
+                    <button class="gallery-btn prev-btn">&#10094;</button> <!-- Left arrow -->
+                    
+                    <div class="gallery-container">
+                      <img src="images/Credit Card Project Images/credit-fraud-dashboard.png" alt="Fraud Detection Dashboard" class="gallery-image active">
+                      <img src="images/Credit Card Project Images/feature-importance.png" alt="Transaction Distribution" class="gallery-image">
+                      <img src="images/Credit Card Project Images/transaction-distribution.png" alt="Model Performance Comparison" class="gallery-image">
+                      <img src="images/Credit Card Project Images/model-comparison.png" alt="Feature Importance" class="gallery-image">
+                      <img src="images/Credit Card Project Images/confusion-matrix.png" alt="Fraud by Hour" class="gallery-image">
+                      <img src="images/Credit Card Project Images/fraud-hour.png" alt="Confusion Matrix Visualization" class="gallery-image">
+                    </div>
+                    
+                    <button class="gallery-btn next-btn">&#10095;</button> <!-- Right arrow -->
+                  </div>
+                  
+            </div>
+    
+            <div class="modal-section">
+                <h3>Key Technologies</h3>
+                <ul>
+                    <li><strong>Languages & Libraries:</strong> Python, scikit-learn, XGBoost, Pandas, NumPy</li>
+                    <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Recharts</li>
+                    <li><strong>Frontend:</strong> React, Tailwind CSS</li>
+                    <li><strong>Version Control:</strong> Git, GitHub</li>
+                </ul>
+            </div>
+    
+            <div class="modal-section">
+                <h3>Project Features</h3>
+                <ul>
+                    <li><strong>Machine Learning Pipeline:</strong> Implemented robust data preprocessing, trained multiple models, achieved 0.67 AUC-ROC.</li>
+                    <li><strong>Data Analysis:</strong> Extracted time-based features, calculated geographic distances, identified key predictive features.</li>
+                    <li><strong>Interactive Dashboard:</strong> Built visualizations for fraud patterns, model performance, and a fraud risk simulator.</li>
+                    <li><strong>Performance Metrics:</strong> Balanced precision-recall, enabled real-time fraud risk scoring across 500,000+ transactions.</li>
+                </ul>
+            </div>
+    
+            <div class="modal-section">
+                <h3>Challenges & Solutions</h3>
+                <p>Handled severe class imbalance (0.39% fraud rate) using sampling techniques and cost-sensitive models. Focused on feature importance analysis to optimize recall without significantly increasing false positives.</p>
+            </div>
+    
+            <div class="modal-section">
+                <h3>Impact & Applications</h3>
+                <p>This system can integrate into real-world payment workflows to prevent financial losses, reduce manual reviews, and provide explainable fraud risk scoring to analysts and decision-makers.</p>
+            </div>
+    
+            
+            
+        </div>
+    </div>
+    
+
+<!-- Template for other project modals (2-5) -->
+<!-- Copy the project1 modal structure and update content for each project -->
+<div class="project-modal" id="project2">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Healthcare Analytics: Predictive Health Outcomes</h2>
+        <!-- Modal content will go here -->
+        <p>Full details for this project will be displayed here.</p>
+    </div>
+</div>
+
+<div class="project-modal" id="project3">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Object Detection System for Self-Driving Cars</h2>
+
+        <div class="modal-section">
+            <h3>Project Overview</h3>
+            <p>Developed a high-performance object detection system for autonomous vehicles using the YOLO (You Only Look Once) architecture. The system accurately identifies and tracks various road objects including vehicles, pedestrians, traffic signs, and potential obstacles in real-time video streams.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Project Demo Video</h3>
+            
+            <div class="modal-video-container">
+              <video controls>
+                <source src="video/Object Detection Output/processed_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+
+        <div class="modal-section">
+            <h3>Technical Details</h3>
+            <ul>
+                <li><strong>Core Technology:</strong> Implemented YOLOv3 algorithm optimized for real-time detection with 90% accuracy.</li>
+                <li><strong>Performance:</strong> Achieved 40% reduction in per-frame processing time compared to standard implementations.</li>
+                <li><strong>Detection Capabilities:</strong> Recognizes and classifies multiple object categories (cars, trucks, pedestrians, bicycles, traffic lights, etc.).</li>
+                <li><strong>Visualization:</strong> Created enhanced UI rendering detection boxes, confidence scores, and object counts.</li>
+                <li><strong>Analytics:</strong> Integrated FPS tracking and detection statistics monitoring.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Real-time detection with color-coded bounding boxes for different object classes.</li>
+                <li>Confidence score display for each detected object.</li>
+                <li>Live performance metrics (FPS counter, detection counts).</li>
+                <li>Adaptive processing for varying lighting and environmental conditions.</li>
+                <li>Comprehensive reporting system for object detection analysis.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Implementation</h3>
+            <p>The system processes video feeds from dashcams or vehicle-mounted cameras, applying computer vision techniques to detect and classify objects. Each detected object is outlined with a bounding box, labeled with its class and confidence score. The processed video maintains high frame rates even in complex traffic scenarios, demonstrating the system's efficiency.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Impact</h3>
+            <p>This object detection system represents a fundamental component for autonomous vehicle perception, enhancing situational awareness and contributing to safer navigation in diverse driving environments.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Technologies Used</h3>
+            <div class="modal-tech-tags">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>YOLO</span>
+                <span>Computer Vision</span>
+                <span>TensorFlow</span>
+            </div>
+        </div>
+
+        <!-- (Optional) Add screenshots here if you have model output/demo images -->
+        <!--
+        <div class="modal-section">
+            <h3>Project Screenshots</h3>
+            <div class="modal-screenshots">
+                <img src="images/self-driving-1.png" alt="Object Detection Example" class="screenshot-image">
+                <img src="images/self-driving-2.png" alt="Detection Visualization" class="screenshot-image">
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+
+
+<div class="project-modal" id="project4">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>FaceVibe: AI-Powered Facial Relaxation & Stress Relief Platform</h2>
+
+        <div class="modal-section">
+            <h3>Project Overview</h3>
+            <p>FaceVibe is an innovative AI-powered wellness platform that leverages real-time facial recognition and gamification to help users reduce facial stress and enhance overall well-being. It combines facial tension detection with personalized relaxation exercises, providing users with immediate feedback and a fun, engaging way to manage stress through 468 facial landmarks mapping and personalized biofeedback.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Technologies Used</h3>
+            <div class="modal-tech-tags">
+                <span>React.js</span>
+                <span>TypeScript</span>
+                <span>MediaPipe FaceMesh</span>
+                <span>Node.js</span>
+                <span>Firebase</span>
+                <span>Convolutional Neural Networks (CNN)</span>
+                <span>FER2013 Dataset</span>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>AI-Powered Facial Detection:</strong> Real-time tracking of 468 facial landmarks to assess stress-related muscle tension.</li>
+                <li><strong>Gamified Stress Relief:</strong> Interactive mini-games with adaptive difficulty based on user's facial stress levels.</li>
+                <li><strong>Personalized Biofeedback:</strong> Visual feedback on facial movements and tension patterns to encourage muscle relaxation.</li>
+                <li><strong>Data Analytics & Tracking:</strong> Storage of engagement metrics and stress scores in Firebase for continuous UX optimization.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Impact</h3>
+            <p>FaceVibe successfully merges facial wellness with mental health technology, providing a personalized and engaging solution for stress management. It outperforms traditional wellness apps by significantly improving user adherence to relaxation practices through AI-driven gamification.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Performance Evaluation</h3>
+            <ul>
+                <li><strong>Model Accuracy:</strong> Achieved a test accuracy of 75.90% on the FER2013 dataset for effective facial tension detection.</li>
+                <li><strong>User Engagement:</strong> Gamified approach led to high retention rates and consistent participation in facial relaxation exercises.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Future Developments</h3>
+            <ul>
+                <li>Offline functionality for better accessibility.</li>
+                <li>Mobile app development with augmented reality features.</li>
+                <li>Wearable integration for comprehensive biometric stress tracking.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Project Demo Video</h3>
+            <div class="modal-video-container">
+                <video controls>
+                    <source src="videos/facevibe-demo.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="project-modal" id="project5">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Predicting Patient Mortality</h2>
+
+        <div class="modal-section">
+            <h3>Project Overview</h3>
+            <p>This project focuses on predicting patient mortality using machine learning techniques, leveraging patient health data to assess the likelihood of mortality based on various clinical features. The goal is to assist healthcare professionals in identifying high-risk patients and providing timely interventions.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Technologies Used</h3>
+            <div class="modal-tech-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Scikit-learn</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>Jupyter Notebook</span>
+                <span>Logistic Regression</span>
+                <span>Random Forest</span>
+                <span>XGBoost</span>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <h3>Data Source</h3>
+            <p>The dataset includes a wide array of patient health indicators, such as age, gender, medical history, lab test results, and vital signs. The data was processed and cleaned to ensure high quality for model training and evaluation.</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Data Preprocessing:</strong> Performed data cleaning, handled missing values, addressed outliers, and scaled numerical features for model compatibility.</li>
+                <li><strong>Feature Engineering:</strong> Created new features to improve the predictive power of the models.</li>
+                <li><strong>Model Development:</strong> Built and compared multiple models including Logistic Regression, Random Forest, and XGBoost to predict patient mortality.</li>
+                <li><strong>Model Evaluation:</strong> Assessed model performance using accuracy, precision, recall, and AUC-ROC scores to select the best-performing approach.</li>
+                <li><strong>Insights:</strong> Identified key features influencing patient mortality, providing actionable insights for healthcare professionals.</li>
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>Impact</h3>
+            <p>The model enables healthcare providers to proactively identify high-risk patients, enhancing patient care and enabling timely medical interventions. This project showcases the importance of data-driven decision-making in critical healthcare environments and highlights the potential life-saving impact of predictive analytics.</p>
+        </div>
+
+        <!-- (Optional) Project Demo Video or Screenshots -->
+        <!--
+        <div class="modal-section">
+            <h3>Project Demo</h3>
+            <div class="modal-video-container">
+                <video controls>
+                    <source src="videos/patient-mortality-demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+
+
 
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>C#</li>
-                <li>Java</li>
-                <li>Angular</li>
-                <li>.NET Framework</li>
-                <li>SQL</li>
-                <li>Data Mining</li>
-                <li>Cloud Computing</li>
-                <li>Microsoft Azure</li>
-                <li>Power BI</li>
-                <li>Tableau</li>
-                <li>Git</li>
-                <li>Jenkins</li>
-                <li>ETL Tools</li>
-            </ul>
+            
+            <div class="skills-categories">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Programming Skills</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>MySQL</li>
+                        <li>Angular</li>
+                        <li>.NET Framework</li>
+                        <li>Data Mining</li>
+                        <li>Cloud Computing</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <ul>
+                        <li>Microsoft Azure</li>
+                        <li>Git</li>
+                        <li>Jira</li>
+                        <li>Jenkins</li>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>ETL Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
+                    <ul>
+                        <li>Cross-functional Leadership</li>
+                        <li>Collaboration</li>
+                        <li>Communication Skills</li>
+                        <li>Problem-solving Skills</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Software Developer Intern</h3>
-                        <h4>Amazon</h4>
-                        <span class="timeline-date">2019 - 2020</span>
-                        <p>
-                            • Assisted in developing and testing web applications using Java and AWS<br>
-                            • Participated in code reviews and implemented feedback to improve code quality<br>
-                            • Contributed to the development of RESTful APIs for internal tools
-                        </p>
-                    </div>
-                </div>
+          <h2 class="section-title">Experience</h2>
+      
+          <div class="timeline">
+            
+            <!-- Graduate Student Assistant -->
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="timeline-date">Jan 2025 – Present</span>
+                <h3>Graduate Student Assistant</h3>
+                <h4>University of Washington · Part-time · Seattle, WA</h4>
+                <p>
+                  • Managing front-desk operations, scheduling, documentation, and assisting with university services.<br>
+                  • Collaborating with faculty to enhance learning experiences through technology-driven solutions.<br>
+                  • Facilitating communication between students and university departments to ensure timely resolution of queries.
+                </p>
+              </div>
             </div>
+      
+            <!-- Software Developer II -->
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="timeline-date">Jun 2022 – May 2024</span>
+                <h3>Software Developer II</h3>
+                <h4>Deloitte · Full-time</h4>
+                <p>
+                  • Developed and executed a tax product strategy for a scalable outbound sales solution, driving a $5M revenue increase.<br>
+                  • Defined product roadmaps, aligning technical requirements with business goals.<br>
+                  • Managed full software development lifecycle (SDLC) from requirement gathering to deployment.<br>
+                  • Improved team velocity by 25% through Agile practices, sprint planning, and mentoring junior developers.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Software Developer I -->
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="timeline-date">Aug 2020 – May 2022</span>
+                <h3>Software Developer I</h3>
+                <h4>Deloitte · Full-time</h4>
+                <p>
+                  • Led development of front-end UI and back-end architecture, reducing application load times by 25%.<br>
+                  • Saved clients ~$1M annually by building an automated tax processing module.<br>
+                  • Increased application security by 40% through penetration testing and security hardening.<br>
+                  • Reduced deployment times by 50% via CI/CD pipeline automation.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Technical Head -->
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <span class="timeline-date">2018 – 2020</span>
+                <h3>Technical Head</h3>
+                <h4>Coding Council</h4>
+                <p>
+                  • Led workshops, hackathons, and coding challenges for 100+ students.<br>
+                  • Fostered a collaborative learning environment to enhance technical skills.<br>
+                  • Organized technical events and coding competitions promoting tech culture on campus.
+                </p>
+              </div>
+            </div>
+      
+          </div>
         </div>
-    </section>
+      </section>
+      
 
     <!-- Education Section -->
     <section id="education">
@@ -146,30 +539,66 @@
             <h2 class="section-title">Education</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Master of Science in Computer Science</h3>
-                        <h4>University of Washington</h4>
-                        <span class="timeline-date">2018 - 2020</span>
-                        <p>
-                            • Specialized in Artificial Intelligence and Machine Learning<br>
-                            • GPA: 3.8/4.0<br>
-                            • Relevant Coursework: Database Systems, Machine Learning, Cloud Computing
+                        <h3>Master of Science in Information Systems</h3>
+                        <h4>University of Washington, Seattle</h4>
+                        <span class="timeline-date">May 2024 - June 2025</span>
+                        <p>• CGPA: 3.8/4</p>
+                        <p class="coursework">
+                            <strong>Relevant Coursework:</strong> Advanced Database Systems, Cloud Computing Architecture, Machine Learning Applications, Big Data Analytics, Information Security, Enterprise Systems
                         </p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Bachelor of Engineering in Computer Science</h3>
+                        <h3>Bachelor of Engineering in Information Technology</h3>
                         <h4>University of Mumbai</h4>
-                        <span class="timeline-date">2014 - 2018</span>
-                        <p>
-                            • First Class with Distinction<br>
-                            • GPA: 3.7/4.0<br>
-                            • Relevant Coursework: Data Structures, Algorithms, Software Engineering
+                        <span class="timeline-date">Aug 2016 - May 2020</span>
+                        <p>• CGPA: 8.22/10</p>
+                        <p class="coursework">
+                            <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Management Systems, Software Engineering, Computer Networks, Operating Systems, Object-Oriented Programming, Web Development, Data Mining
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <img src="images/Certificate logos/kpmg logo.jpeg" alt="KPMG Logo" class="certification-logo">
+                    <h3>Data Analytics Consulting Virtual Internship</h3>
+                    <p>Issued by KPMG</p>
+                    <a href="#" class="view-certificate">View Certificate</a>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neural Networks and Deep Learning</h3>
+                    <p>Coursera</p>
+                    <a href="#" class="view-certificate">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Learning Data Analytics: Foundations</h3>
+                    <p>LinkedIn Learning, 2024</p>
+                    <a href="#" class="view-certificate">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Software Engineering Training Bootcamp</h3>
+                    <p>JP Morgan Chase & Co, 2022</p>
+                    <a href="#" class="view-certificate">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -179,22 +608,35 @@
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
-            <p>Email: hrishikeshgawde2507@gmail.com</p>
-            <p>Phone: 206-581-8623</p>
-            <div class="contact-social-links">
-                <a href="https://github.com/hrishikeshgawde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:hrishikeshgawde2507@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
-                <a href="https://www.linkedin.com/in/hrishikesh-gawde/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: hrishikeshgawde2507@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: 206-581-8623</p>
+                    <div class="contact-social-links">
+                        <a href="https://github.com/hrishikeshgawde" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="mailto:hrishikeshgawde2507@gmail.com"><i class="fas fa-envelope"></i> Gmail</a>
+                        <a href="https://www.linkedin.com/in/hrishikesh-gawde/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                    <div id="form-status" class="hidden"></div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <p>Download my resume to learn more about my experience and qualifications.</p>
-            <a href="Hrishikesh-Gawde-Resume.pdf" download class="btn primary"><i class="fas fa-download"></i> Download Resume</a>
         </div>
     </section>
 
