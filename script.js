@@ -163,6 +163,110 @@ function setupGallery() {
   });
 }
 
+// Add this to your script.js file
+
+// Video Error Handling Function
+function handleVideoError(video) {
+  console.log('Video error detected:', video.src);
+  
+  const container = video.closest('.modal-video-container');
+  const fallback = container.querySelector('.video-fallback');
+  
+  // Hide the video element
+  video.style.display = 'none';
+  
+  // Show the fallback content
+  if (fallback) {
+      fallback.style.display = 'block';
+  } else {
+      // Create fallback if it doesn't exist
+      const fallbackDiv = document.createElement('div');
+      fallbackDiv.className = 'video-error';
+      fallbackDiv.innerHTML = `
+          <div class="error-content">
+              <i class="fas fa-exclamation-triangle"></i>
+              <h4>Video Unavailable</h4>
+              <p>The demo video for this project is currently unavailable.</p>
+              <p>This may be due to:</p>
+              <ul>
+                  <li>Video file not found in the project directory</li>
+                  <li>Network connectivity issues</li>
+                  <li>Browser compatibility issues</li>
+              </ul>
+              <div class="error-actions">
+                  <button onclick="retryVideo(this)" class="btn secondary">Retry</button>
+                  <a href="mailto:hrishikeshgawde2507@gmail.com?subject=Portfolio Video Request" class="btn primary">Request Video</a>
+              </div>
+          </div>
+      `;
+      container.appendChild(fallbackDiv);
+  }
+}
+
+// Retry Video Function
+function retryVideo(button) {
+  const container = button.closest('.modal-video-container');
+  const video = container.querySelector('video');
+  const errorDiv = container.querySelector('.video-error');
+  
+  // Hide error message
+  if (errorDiv) {
+      errorDiv.remove();
+  }
+  
+  // Show and reload video
+  video.style.display = 'block';
+  video.load(); // Reload the video
+  
+  // Add a one-time error listener
+  video.addEventListener('error', function() {
+      handleVideoError(video);
+  }, { once: true });
+}
+
+// Enhanced video loading with better error handling
+document.addEventListener('DOMContentLoaded', function() {
+  const videos = document.querySelectorAll('.modal-video-container video');
+  
+  videos.forEach(video => {
+      // Add loading indicator
+      const loadingDiv = document.createElement('div');
+      loadingDiv.className = 'video-loading';
+      loadingDiv.innerHTML = `
+          <div class="loading-content">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>Loading video...</p>
+          </div>
+      `;
+      video.parentElement.appendChild(loadingDiv);
+      
+      // Handle video events
+      video.addEventListener('loadstart', function() {
+          loadingDiv.style.display = 'flex';
+      });
+      
+      video.addEventListener('canplay', function() {
+          loadingDiv.style.display = 'none';
+      });
+      
+      video.addEventListener('error', function() {
+          loadingDiv.style.display = 'none';
+          handleVideoError(video);
+      });
+      
+      // Add video interaction improvements
+      video.addEventListener('click', function() {
+          if (video.paused) {
+              video.play().catch(error => {
+                  console.log('Auto-play prevented:', error);
+              });
+          } else {
+              video.pause();
+          }
+      });
+  });
+});
+
 // Call setupGallery() when DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
   setupGallery();
